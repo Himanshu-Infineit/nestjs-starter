@@ -100,7 +100,7 @@ async function bootstrap(): Promise<void> {
     // Set up global exception filters
     app.useGlobalFilters(
         new AllExceptionsFilter(reflector),
-        // new PrismaClientExceptionFilter(httpAdapter),
+        new PrismaClientExceptionFilter(httpAdapter),
         // new QueryFailedFilter(reflector),
         new BadRequestExceptionFilter(reflector)
     );
